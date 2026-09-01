@@ -1,163 +1,1152 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  color: #222;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    "Noto Sans JP",
-    sans-serif;
-  line-height: 1.8;
-  background-color: #f7f7f7;
+    margin: 0;
+    color: #222;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans JP",
+        sans-serif;
+    line-height: 1.8;
+    background-color: #fff;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 a {
-  color: inherit;
+    color: inherit;
 }
 
 .container {
-  width: min(100% - 40px, 1080px);
-  margin-inline: auto;
+    width: min(100% - 40px, 1080px);
+    margin-inline: auto;
 }
 
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  padding: 16px 0;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 16px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #ddd;
 }
 
 .header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
 }
 
 .site-name {
-  margin: 0;
-  font-weight: 700;
+    margin: 0;
+    font-weight: 700;
 }
 
 .navigation {
-  display: flex;
-  gap: 24px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    display: flex;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .navigation a {
-  font-size: 14px;
-  text-decoration: none;
+    font-size: 14px;
+    text-decoration: none;
 }
 
 .hero {
-  display: grid;
-  min-height: 600px;
-  place-items: center;
-  padding: 100px 0;
-  background-color: #ece8ff;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 85% 25%,
+            rgba(255, 255, 255, .18),
+            transparent 45%),
+        linear-gradient(120deg,
+            #4be4ff7a,
+            #3b3fae);
+}
+
+/* 中央にまとまった2カラム */
+.hero-inner {
+    color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 760px;
+    padding: 0 40px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
 }
 
 .hero-label {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+    margin: 0 0 34px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
 }
 
-.hero h1 {
-  margin: 16px 0;
-  font-size: clamp(40px, 8vw, 80px);
-  line-height: 1.25;
+.hero-title {
+    margin: 0 0 32px;
+    font-size: clamp(58px, 5vw, 78px);
+    font-weight: 700;
+    line-height: 1.22;
+    letter-spacing: 0.01em;
+}
+
+.hero-title span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.72em;
+}
+
+.hero-description {
+    margin: 0 0 34px;
+
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.85;
+    letter-spacing: 0.01em;
+}
+
+.hero-visual {
+    position: absolute;
+    right: -140px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 700px;
+    pointer-events: none;
+}
+
+.hero-visual img {
+    animation: glow 3s ease-in-out infinite;
+}
+
+
+@keyframes glow {
+
+    0%,
+    100% {
+        opacity: 0.9;
+        filter:
+            brightness(0.95) drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
+    }
+
+    20% {
+        opacity: 1;
+        filter:
+            brightness(1.15) drop-shadow(0 0 14px rgba(255, 255, 255, 0.45)) drop-shadow(0 0 26px rgba(255, 90, 70, 0.2));
+    }
 }
 
 .section {
-  padding: 96px 0;
+    padding: 96px 0;
 }
 
 .section:nth-of-type(even) {
-  background-color: #fff;
+    background-color: #fff;
+}
+
+.section-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 40px;
 }
 
 .section h2 {
-  margin-top: 0;
-  font-size: clamp(28px, 5vw, 44px);
+    margin-top: 0;
+    font-size: clamp(28px, 5vw, 44px);
 }
 
 .button {
-  display: inline-block;
-  padding: 12px 24px;
-  margin-top: 20px;
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  background-color: #222;
-  border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    min-width: 260px;
+    padding: 18px 28px;
+
+    color: #fff;
+    background-color: #1f1f1f;
+    border-radius: 999px;
+
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
 }
 
+.button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* エピソードカード */
 .episode-card,
 .member-card {
-  padding: 32px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 16px;
+    padding: 32px;
+    background: #fff;
+    border: 1px solid #ffffff;
+    border-radius: 16px;
 }
 
 .episode-number {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.episode-section {
+    padding: 64px 24px;
+    background-color: #fff
+}
+
+.episode-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(400px, 0.9fr);
+    align-items: center;
+    gap: clamp(48px, 6vw, 88px);
+
+    width: min(1400px, 100%);
+    margin: 0 auto;
+    padding: clamp(56px, 6vw, 88px);
+
+    background-color: #fff;
+    border: 3px solid #d8d8d8;
+    border-radius: 28px;
+}
+
+.episode-main {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    column-gap: 44px;
+    align-items: start;
+    min-width: 0;
+}
+
+.episode-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-right: 28px;
+    border-right: 3px solid #d8d8d8;
+}
+
+.episode-icon {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.episode-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.episode-number {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.episode-title {
+    margin: 0 0 24px;
+
+    font-size: clamp(30px, 3vw, 44px);
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+}
+
+.episode-body {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.episode-description {
+    max-width: 680px;
+    margin: 0 0 14px;
+
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 0.02em;
+}
+
+.episode-description:last-of-type {
+    margin-bottom: 34px;
+}
+
+.episode-visual {
+    width: 100%;
+    min-width: 0;
+}
+
+.episode-visual img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    border-radius: 20px;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
+}
+
+.youtube-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    min-width: 260px;
+    padding: 18px 28px;
+
+    color: #fff;
+    background-color: #1f1f1f;
+    border-radius: 999px;
+
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.youtube-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.youtube-button-icon {
+    display: grid;
+    place-items: center;
+
+    width: 28px;
+    height: 28px;
+
+    color: #1f1f1f;
+    background-color: #fff;
+    border-radius: 50%;
+
+    font-size: 11px;
+}
+
+.episode-visual {
+    width: 100%;
+}
+
+.episode-visual img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    border-radius: 20px;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
 }
 
 .member-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
 
 .footer {
-  padding: 32px 0;
-  color: #fff;
-  text-align: center;
-  background-color: #222;
+    padding: 15px 0;
+    color: #fff;
+    text-align: center;
+    background-color: #222;
 }
 
-@media (max-width: 768px) {
-  .header .container {
-    align-items: flex-start;
-    flex-direction: column;
-  }
+/* opeセクション */
 
-  .navigation {
-    flex-wrap: wrap;
-    gap: 8px 16px;
-  }
+html {
+    scroll-behavior: smooth;
+}
 
-  .hero {
-    min-height: 500px;
-  }
+.ope-section,
+.ope-profile-section {
+    padding: 40px 20px 80px;
+}
 
-  .member-list {
-    grid-template-columns: 1fr;
-  }
+.ope-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
 
-  .section {
-    padding: 72px 0;
-  }
+.ope-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    color: inherit;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.ope-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.ope-card__image {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.ope-card__role,
+.ope-profile__role {
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.ope-card__name {
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.ope-card__text {
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.ope-card__link {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.ope-card__link:hover {
+    text-decoration: underline;
+}
+
+.ope-profile-section {
+    background-color: #f7f7f7;
+}
+
+.ope-profile {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-top: 32px;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    scroll-margin-top: 40px;
+}
+
+.ope-profile+.ope-profile {
+    margin-top: 32px;
+}
+
+.ope-profile__image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.ope-profile__name {
+    margin-bottom: 16px;
+    font-size: 32px;
+}
+
+.ope-profile__description {
+    margin-bottom: 24px;
+    line-height: 1.9;
+}
+
+.ope-profile__info {
+    margin: 0;
+}
+
+.ope-profile__info div {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-top: 1px solid #ddd;
+}
+
+.ope-profile__info div:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.ope-profile__info dt {
+    font-weight: bold;
+}
+
+.ope-profile__info dd {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.ope-profile__back {
+    display: inline-block;
+    margin-top: 24px;
+    color: inherit;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* プロフィールセクション */
+.profile-header {
+    padding: 24px 20px 0;
+}
+
+.back-link {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.profile,
+.profile-detail,
+.profile-episodes {
+    padding: 48px 20px;
+}
+
+.profile .container,
+.profile-detail .container,
+.profile-episodes .container,
+.profile-header .container {
+    width: min(100%, 1200px);
+    margin-inline: auto;
+}
+
+.profile-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.profile-image img {
+    display: block;
+    width: 280px;
+    height: 280px;
+    object-fit: contain;
+}
+
+.profile-content {
+    min-width: 0;
+}
+
+.profile-role {
+    margin: 0 0 16px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+}
+
+.profile-content h1 {
+    margin: 0 0 24px;
+    font-size: 40px;
+}
+
+.profile-message {
+    max-width: 760px;
+    margin: 0;
+    line-height: 2;
+}
+
+/* プロフィール詳細 */
+.profile-detail {
+    background-color: #f7f7f7;
+}
+
+.profile-detail h2,
+.profile-episodes h2 {
+    margin: 0 0 32px;
+    font-size: 32px;
+}
+
+.profile-detail dl {
+    margin: 0;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.profile-detail dl>div {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
+    padding: 24px 32px;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-detail dl>div:last-child {
+    border-bottom: none;
+}
+
+.profile-detail dt {
+    font-weight: bold;
+}
+
+.profile-detail dd {
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* 出演回 */
+
+.profile-episodes ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.profile-episodes li {
+    padding: 20px 24px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.profile-episodes li+li {
+    margin-top: 16px;
+}
+
+
+
+/* 改行 */
+.pc-break {
+    display: inline;
+}
+
+.sp-break {
+    display: none;
+}
+
+/* フェードイン効果 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay {
+    transition-delay: 0.2s;
+}
+
+.delay-2 {
+    transition-delay: 0.4s;
+}
+
+.delay-3 {
+    transition-delay: 0.6s;
+}
+
+/* =================================
+   レスポンシブ
+================================= */
+@media screen and (max-width: 600px) {
+
+    .pc-break {
+        display: none;
+    }
+
+    .sp-break {
+        display: inline;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: min(100% - 32px, 100%);
+    }
+
+    /* -----------------
+       ヘッダー
+    ----------------- */
+    .header {
+        padding: 12px 0;
+    }
+
+    .header .container {
+        display: block;
+    }
+
+    .site-name {
+        margin-bottom: 10px;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .navigation {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .navigation a {
+        font-size: 10px;
+        line-height: 1.5;
+        white-space: nowrap;
+    }
+
+    /* -----------------
+       ヒーロー
+    ----------------- */
+    .hero {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        position: relative;
+
+        display: block;
+        width: 100%;
+        min-height: 540px;
+        padding: 48px 20px 52px;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        max-width: none;
+    }
+
+    .hero-label {
+        margin-bottom: 22px;
+        font-size: 12px;
+        line-height: 1.5;
+        letter-spacing: 0.14em;
+    }
+
+    .hero-title {
+        margin-bottom: 20px;
+
+        font-size: clamp(42px, 12vw, 52px);
+        line-height: 1.15;
+        letter-spacing: 0;
+    }
+
+    .hero-title span {
+        margin-bottom: 4px;
+        font-size: 0.72em;
+    }
+
+    .hero-description {
+        position: relative;
+        z-index: 2;
+
+        max-width: 280px;
+        margin-bottom: 28px;
+
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .hero-description br {
+        display: none;
+    }
+
+    .hero-button,
+    .button {
+        min-width: 180px;
+        padding: 14px 22px;
+
+        font-size: 13px;
+    }
+
+    /* 背景ロゴ */
+    .hero-visual {
+        position: absolute;
+        z-index: 1;
+
+        right: -95px;
+        bottom: 18px;
+
+        display: block;
+        width: 310px;
+
+        pointer-events: none;
+    }
+
+    .hero-visual img {
+        display: block;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        opacity: 0.34;
+    }
+
+    /* -----------------
+       共通セクション
+    ----------------- */
+    .section {
+        padding: 64px 0;
+    }
+
+    .section-title,
+    .section h2 {
+        margin-bottom: 28px;
+        font-size: 25px;
+        line-height: 1.5;
+    }
+
+    /* 番組について */
+    .about-section {
+        padding: 56px 20px;
+    }
+
+    .about-section p {
+        margin-bottom: 18px;
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    /* -----------------
+       放送カード
+    ----------------- */
+    .episode-section {
+        padding: 48px 12px;
+    }
+
+    .episode-card {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        width: 100%;
+        padding: 18px 14px 24px;
+
+        border-radius: 14px;
+    }
+
+    .episode-visual {
+        order: -1;
+        width: 100%;
+    }
+
+    .episode-visual img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .episode-main {
+        display: block;
+        width: 100%;
+    }
+
+    .episode-meta {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 7px;
+
+        margin-bottom: 18px;
+        padding: 0 0 12px;
+
+        border-right: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .episode-icon {
+        margin: 0;
+        font-size: 13px;
+    }
+
+    .episode-label {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+    }
+
+    .episode-number {
+        font-size: 14px;
+    }
+
+    .episode-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .episode-title {
+        margin-bottom: 16px;
+        font-size: 22px;
+        line-height: 1.45;
+    }
+
+    .episode-description {
+        max-width: none;
+        margin-bottom: 14px;
+
+        font-size: 13px;
+        line-height: 1.9;
+        letter-spacing: 0;
+    }
+
+    .episode-description:last-of-type {
+        margin-bottom: 24px;
+    }
+
+    .youtube-button {
+        width: 100%;
+        min-width: 0;
+        padding: 14px 20px;
+
+        font-size: 13px;
+    }
+
+    .youtube-button-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 9px;
+    }
+
+    /* -----------------
+       運営チーム
+    ----------------- */
+    .ope-section {
+        padding: 56px 16px;
+    }
+
+    .ope-list {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 24px;
+    }
+
+    .ope-card {
+        flex-direction: column;
+        gap: 16px;
+
+        padding: 24px 18px;
+        text-align: center;
+    }
+
+    .ope-card__image {
+        width: 96px;
+        height: 96px;
+    }
+
+    .ope-card__role {
+        font-size: 10px;
+    }
+
+    .ope-card__name {
+        margin-bottom: 6px;
+        font-size: 20px;
+    }
+
+    .ope-card__text {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .ope-card__link {
+        font-size: 12px;
+    }
+
+    /* -----------------
+       お便り
+    ----------------- */
+    .letter-section {
+        padding: 56px 20px;
+    }
+
+    .letter-section h2 {
+        margin-bottom: 24px;
+        font-size: 25px;
+    }
+
+    .letter-section p {
+        margin-bottom: 16px;
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    /* -----------------
+       フッター
+    ----------------- */
+    .footer {
+        padding: 24px 16px;
+        font-size: 10px;
+    }
+}
+
+/* =================================
+   プロフィールページ：レスポンシブ
+================================= */
+@media screen and (max-width: 600px) {
+
+    /* 共通幅 */
+    .profile .container,
+    .profile-detail .container,
+    .profile-episodes .container,
+    .profile-header .container {
+        width: min(100% - 32px, 100%);
+        margin-inline: auto;
+    }
+
+    /* 戻るリンク */
+    .profile-header {
+        padding: 20px 0 0;
+    }
+
+    .back-link {
+        font-size: 13px;
+    }
+
+    /* プロフィール上部 */
+    .profile {
+        padding: 48px 0 56px;
+    }
+
+    .profile-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        align-items: center;
+    }
+
+    .profile-image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-image img {
+        display: block;
+        width: 180px;
+        height: 180px;
+        margin-inline: auto;
+        object-fit: contain;
+    }
+
+    .profile-content {
+        width: 100%;
+        min-width: 0;
+        text-align: left;
+    }
+
+    .profile-role {
+        margin-bottom: 10px;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+    }
+
+    .profile-content h1 {
+        margin: 0 0 18px;
+        font-size: 30px;
+        line-height: 1.4;
+    }
+
+    .profile-message {
+        max-width: none;
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    /* プロフィール詳細 */
+    .profile-detail {
+        padding: 48px 0;
+    }
+
+    .profile-detail h2,
+    .profile-episodes h2 {
+        margin-bottom: 24px;
+        font-size: 26px;
+        line-height: 1.5;
+    }
+
+    .profile-detail dl {
+        border-radius: 14px;
+    }
+
+    .profile-detail dl>div {
+        display: block;
+        padding: 20px 18px;
+    }
+
+    .profile-detail dt {
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .profile-detail dd {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.9;
+
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+
+    /* 出演回 */
+    .profile-episodes {
+        padding: 48px 0 64px;
+    }
+
+    .profile-episodes ul {
+        width: 100%;
+    }
+
+    .profile-episodes li {
+        padding: 18px 16px;
+        border-radius: 10px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .profile-episodes li+li {
+        margin-top: 12px;
+    }
 }

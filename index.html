@@ -1,146 +1,245 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- 検索結果に表示させない -->
-  <meta name="robots" content="noindex, nofollow">
+    <!-- 検索結果に表示させない -->
+    <meta name="robots" content="noindex, nofollow">
 
-  <meta
-    name="description"
-    content="社員同士をつなぐ社内向けラジオ番組です。"
-  >
+    <meta name="description" content="社員同士をつなぐ社内向けラジオ番組です。">
 
-  <title>YUITのつながる放送部</title>
+    <title>YUITのつながる放送局</title>
 
-  <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-  <header class="header">
-    <div class="container">
-      <p class="site-name">YUITのつながる放送部</p>
+    <header class="header">
+        <div class="container">
+            <link rel="icon" href="./assets/images/favicon.png" type="image/png">
+            <p class="site-name">YUITのつながる放送局</p>
 
-      <nav aria-label="メインナビゲーション">
-        <ul class="navigation">
-          <li><a href="#about">番組について</a></li>
-          <li><a href="#episodes">放送一覧</a></li>
-          <li><a href="#members">MC紹介</a></li>
-          <li><a href="#message">お便り</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <p class="hero-label">INTERNAL RADIO PROGRAM</p>
-
-        <h1>
-          案件を越えて、<br>
-          人と人をつなぐ。
-        </h1>
-
-        <p>
-          社員一人ひとりの魅力を届ける、社内向けラジオ番組です。
-        </p>
-
-        <a class="button" href="#episodes">
-          最新回を聴く
-        </a>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container">
-        <h2>番組について</h2>
-
-        <p>
-          普段なかなか話す機会のない社員同士が、
-          お互いを知るきっかけを作る社内ラジオです。
-        </p>
-      </div>
-    </section>
-
-    <section id="episodes" class="section">
-      <div class="container">
-        <h2>放送一覧</h2>
-
-        <article class="episode-card">
-          <p class="episode-number">EPISODE 01</p>
-
-          <h3>つながる放送部、始まります！</h3>
-
-          <p>
-            初回放送では、番組を立ち上げた理由や、
-            これから届けていきたい内容についてお話しします。
-          </p>
-
-          <a
-            class="button"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            YouTubeで聴く
-          </a>
-        </article>
-      </div>
-    </section>
-
-    <section id="members" class="section">
-      <div class="container">
-        <h2>MC紹介</h2>
-
-        <div class="member-list">
-          <article class="member-card">
-            <h3>まちゃみ</h3>
-            <p>番組MC・企画・制作担当</p>
-          </article>
-
-          <article class="member-card">
-            <h3>〇〇</h3>
-            <p>番組MC</p>
-          </article>
+            <nav aria-label="メインナビゲーション">
+                <ul class="navigation">
+                    <li><a href="#about">番組について</a></li>
+                    <li><a href="#episodes">放送一覧</a></li>
+                    <li><a href="#ope">運営チーム紹介</a></li>
+                    <li><a href="#message">お便り</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <section id="message" class="section">
-      <div class="container">
-        <h2>お便り募集</h2>
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
 
-        <p>
-          番組への感想、ゲストへの質問、
-          出演してほしい社員などを募集しています。
-        </p>
+                <div class="hero-content">
+                    <p class="hero-label fade-in">YUIT RADIO PROGRAM</p>
 
-        <a
-          class="button"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          お便りを送る
-        </a>
-      </div>
-    </section>
-  </main>
+                    <h1 class="hero-title fade-in delay">
+                        YUITの<br>
+                        つながる放送局
+                    </h1>
 
-  <footer class="footer">
-    <div class="container">
-      <small>
-        &copy; 2026 YUITのつながる放送部
-      </small>
-    </div>
-  </footer>
+                    <p class="hero-description fade-in delay-2">
+                        案件を越えて、人と人をつなぐ。<br>
+                        社員一人ひとりの魅力を届ける、社内向けラジオ番組です。
+                    </p>
 
-  <script src="./js/main.js"></script>
+                    <a href="#episodes" class="button fade-in delay-3" target="_blank" rel="noopener noreferrer">
+                        最新回を聴く
+                        <span class="youtube-button-icon">▶</span>
+                    </a>
+                </div>
+
+                <div class="hero-visual">
+                    <img src="/assets/images/toplogo.png" alt="YUITのつながる放送局 ON AIR">
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">番組について</h2>
+
+                <p class="fade-in delay">
+                    SESという働き方では、<br class="sp-break">それぞれ異なる案件先で働くため、<br>
+                    社員同士が関わる機会が少なくなりがちです。<br>
+                    <br>
+                    「同じ会社なのに、顔も名前も知らない」<br>
+                    そんな環境だからこそ、<br class="sp-break">
+                    社員一人ひとりの魅力や経験を知る<br class="sp-break">きっかけを作りたい<br>
+                    <br>
+                    という想いから、<br class="sp-break">
+                    この社内ラジオ番組を企画しました。<br>
+                    <br>
+                    隔週でさまざまな社員をゲストに迎え、<br>
+                    仕事やこれまでの経験、<br class="sp-break">失敗談・成功体験から<br>
+                    趣味や休日の過ごし方まで、楽しくお届けします。<br>
+                    <br>
+                    「この人ってこんな人だったんだ！」<br>
+                    「今度この人に相談してみようかな。」<br>
+                    <br>
+                    そんな新しいつながりが生まれる、<br class="sp-break">
+                    温かい番組を目指しています。<br>
+                </p>
+            </div>
+        </section>
+
+        <section class="episode-section" id="episodes">
+            <article class="episode-card">
+
+                <div class="episode-main">
+
+                    <div class="episode-meta fade-in delay">
+                        <span class="episode-icon">📻</span>
+                        <span class="episode-label">EPISODE</span>
+                        <span class="episode-number">01</span>
+                    </div>
+
+                    <div class="episode-content">
+                        <h2 class="section-title fade-in delay">
+                            社内ラジオ番組始動！
+                        </h2>
+
+                        <div class="episode-body">
+                            <p class="episode-description fade-in delay-2">
+                                初回放送では、番組を立ち上げた理由や、<br>
+                                これから届けていきたい内容についてお届けします。
+                            </p>
+
+                            <p class="episode-description fade-in delay-2">
+                                また、記念すべき初回のゲストとして、<br class="sp-break"><br class="pc-break">
+                                弊社新社長の<strong>津波古大海さん</strong>が登場。<br class="sp-break"><br class="pc-break">
+                                <br>
+                                ちょっと変わった質問に答えていただいたり、<br class="sp-break"><br class="pc-break">
+                                会社のこれまでの歩みや、今後の展望について語ります！
+                            </p>
+
+                            <a href="https://youtu.be/VXp4YOue4zA" class="youtube-button fade-in delay" target="_blank" rel="noopener noreferrer">
+                                <span>YouTubeで聴く</span>
+                                <span class="youtube-button-icon">▶</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="episode-visual fade-in delay-2">
+                    <img src="./assets/images/epi01_thumbnail.png" alt="第1回 社内ラジオ番組始動">
+                </div>
+
+            </article>
+        </section>
+        <!-- 運営チームセクション -->
+        <section class="ope-section" id="ope">
+            <div class="container">
+                <h2 class="section-title fade-in delay">運営チーム</h2>
+
+                <div class="ope-body">
+                    <p class="ope-description fade-in delay-2">
+                        番組の運営チームを紹介します。<br>
+                        運営チームは、台本作成や編集、<br class="sp-break">番組の企画、当サイトの運用などを<br>
+                        一緒に行ってくれるメンバーを<br class="sp-break">随時募集しています！<br>
+                        興味のある方は、運営メンバーのDM または<br class="sp-break"> <a href="#message">お便りフォーム</a> からご連絡ください。
+                    </p>
+
+
+                    <div class="ope-list fade-in delay-3">
+
+                        <!-- 1人目 -->
+                        <a class="ope-card" href="/profile/01.machami.html">
+
+                            <img src="./assets/images/animal_hamster.png" alt="運営チーム まちゃみ" class="ope-card__image">
+
+                            <div class="ope-card__body">
+
+                                <p class="ope-card__role">MAIN MC / OPERATION</p>
+
+                                <h3 class="ope-card__name">
+                                    まちゃみ
+                                </h3>
+
+                                <p class="ope-card__text">
+                                    人と話すこと、話を聞くことが大好きです！
+                                </p>
+
+                                <span class="ope-card__link">
+                                    プロフィールを見る →
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                        <!-- 2人目 -->
+                        <a class="ope-card" href="./profile/02.yanocchi.html">
+
+                            <img src="./assets/images/gassyou_neko.png" alt="ope やのっち" class="ope-card__image">
+
+                            <div class="ope-card__body">
+
+                                <p class="ope-card__role">MAIN MC / OPERATION</p>
+
+                                <h3 class="ope-card__name">
+                                    やのっち
+                                </h3>
+
+                                <p class="ope-card__text">
+                                    常に全力！をモットーに頑張ります🔥
+                                </p>
+
+                                <span class="ope-card__link">
+                                    プロフィールを見る →
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+                </div>
+
+        </section>
+
+        <section id="message" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in delay">お便り募集</h2>
+
+                <p class="fade-in delay-2">番組への感想やご意見、ゲストへの質問、<br class="sp-break">
+                    「こんな企画をやってほしい！」<br class="sp-break">
+                    というアイデアなどを大募集！<br>
+                    <br>
+                    「この人に出演してほしい！」<br>
+                    「このテーマについて話を聞いてみたい！」<br>
+                    <br>
+                    そんなリクエストも大歓迎です！<br>
+                    <br>
+                    フォームは匿名で送信できますので、<br class="sp-break">
+                    お気軽にお送りください。
+                </p>
+
+                <a class="button fade-in delay-2" href="https://forms.gle/uAtZ8uFBR2qXpwNQ9" target="_blank" rel="noopener noreferrer">
+                    お便りを送る
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <small>
+                &copy; 2026 YUITのつながる放送局
+            </small>
+        </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
