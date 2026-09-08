@@ -299,7 +299,7 @@ a {
 }
 
 .episode-description:last-of-type {
-    margin-bottom: 34px;
+    margin-bottom: 50px;
 }
 
 .episode-visual {
@@ -370,6 +370,12 @@ a {
 
     border-radius: 20px;
     box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
+}
+
+.backnumber-link {
+    width: min(1400px, 100%);
+    margin: 28px auto 0;
+    text-align: right;
 }
 
 .member-list {
@@ -952,6 +958,12 @@ html {
         font-size: 9px;
     }
 
+    .backnumber-link {
+        width: 100%;
+        margin-top: 24px;
+        text-align: center;
+    }
+
     /* -----------------
        運営チーム
     ----------------- */
@@ -1148,5 +1160,285 @@ html {
 
     .profile-episodes li+li {
         margin-top: 12px;
+    }
+}
+
+/* =================================
+   BACK NUMBER
+================================= */
+
+.backnumber-hero {
+    padding: 72px 20px 48px;
+}
+
+.backnumber-hero .container,
+.backnumber-section .container {
+    width: min(100% - 40px, 1200px);
+    margin-inline: auto;
+}
+
+.backnumber-label {
+    margin: 0 0 12px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.backnumber-title {
+    margin: 0 0 20px;
+
+    font-size: clamp(42px, 6vw, 64px);
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+}
+
+.backnumber-description {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+
+/* バックナンバー一覧 */
+
+.backnumber-section {
+    padding: 40px 20px 96px;
+}
+
+.backnumber-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+}
+
+
+/* カード */
+
+.backnumber-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    background-color: #fff;
+    border: 3px solid #d8d8d8;
+    border-radius: 20px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.backnumber-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+}
+
+
+/* サムネイル */
+
+.backnumber-image {
+    width: 100%;
+    padding: 20px 20px 0;
+}
+
+
+.backnumber-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* カード本文 */
+
+.backnumber-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 28px;
+}
+
+.backnumber-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 18px;
+}
+
+.backnumber-meta .episode-icon {
+    margin: 0;
+}
+
+.backnumber-meta .episode-label {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+}
+
+.backnumber-meta .episode-number {
+    font-size: 16px;
+}
+
+.episode-visual img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* タイトル */
+
+.backnumber-card-title {
+    margin: 0 0 12px;
+
+    font-size: 26px;
+    line-height: 1.5;
+}
+
+
+/* ゲスト */
+
+.backnumber-guest {
+    margin: 0 0 16px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+
+/* 説明文 */
+
+.backnumber-card-description {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* YouTubeボタン */
+
+.backnumber-button-area {
+    padding-top: 24px;
+}
+
+/* トップへ戻る */
+
+.backnumber-back {
+    margin-top: 48px;
+}
+
+
+/* =================================
+   BACK NUMBER レスポンシブ
+================================= */
+
+@media screen and (max-width: 600px) {
+
+    .backnumber-hero {
+        padding: 48px 0 32px;
+    }
+
+    .backnumber-hero .container,
+    .backnumber-section .container {
+        width: min(100% - 32px, 100%);
+    }
+
+    .backnumber-label {
+        margin-bottom: 8px;
+        font-size: 10px;
+    }
+
+    .backnumber-title {
+        margin-bottom: 16px;
+
+        font-size: 38px;
+    }
+
+    .backnumber-description {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+
+    .backnumber-section {
+        padding: 24px 0 64px;
+    }
+
+    .backnumber-list {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+
+    .backnumber-card {
+        border-radius: 16px;
+    }
+
+    .backnumber-image img {
+        border-radius: 14px 14px 0 0;
+    }
+
+    .backnumber-content {
+        padding: 20px 18px 22px;
+    }
+
+
+    .backnumber-meta {
+        gap: 6px;
+        margin-bottom: 14px;
+    }
+
+    .backnumber-meta .episode-icon {
+        font-size: 12px;
+    }
+
+    .backnumber-meta .episode-label {
+        font-size: 10px;
+    }
+
+    .backnumber-meta .episode-number {
+        font-size: 13px;
+    }
+
+
+    .backnumber-card-title {
+        margin-bottom: 10px;
+
+        font-size: 21px;
+        line-height: 1.45;
+    }
+
+    .backnumber-guest {
+        margin-bottom: 14px;
+        font-size: 11px;
+    }
+
+    .backnumber-card-description {
+        margin-bottom: 32px;
+
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+
+    .backnumber-card .youtube-button {
+        width: 100%;
+        min-width: 0;
+        padding: 14px 18px;
+
+        font-size: 13px;
+    }
+
+
+    .backnumber-back {
+        margin-top: 36px;
+    }
+
+    .backnumber-back .back-link {
+        font-size: 13px;
     }
 }
