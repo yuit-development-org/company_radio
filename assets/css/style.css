@@ -417,7 +417,7 @@ html {
     color: inherit;
     text-decoration: none;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 3px solid #ddd;
     border-radius: 16px;
     transition:
         transform 0.2s ease,
@@ -1214,7 +1214,7 @@ html {
 }
 
 
-/* カード */
+/* 放送一覧カード */
 
 .backnumber-card {
     display: flex;
@@ -1232,7 +1232,8 @@ html {
 
 .backnumber-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+    /* box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4); */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 
