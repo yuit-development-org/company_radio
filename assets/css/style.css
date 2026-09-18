@@ -276,10 +276,10 @@ a {
 
 .episode-title {
     margin: 0 0 24px;
-
     font-size: clamp(30px, 3vw, 44px);
     line-height: 1.35;
     letter-spacing: 0.02em;
+    white-space: nowrap;
 }
 
 .episode-body {
@@ -929,6 +929,7 @@ html {
         margin-bottom: 16px;
         font-size: 22px;
         line-height: 1.45;
+        white-space: nowrap;
     }
 
     .episode-description {
