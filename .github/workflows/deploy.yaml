@@ -1,9 +1,9 @@
 name: Deploy Radio Site
 
 on:
-  # 毎週金曜日 18:00（日本時間）に自動実行
+  # 毎週金曜日 17:30（日本時間）に自動実行
   schedule:
-    - cron: "0 18 * * 5"
+    - cron: "30 17 * * 5"
       timezone: "Asia/Tokyo"
 
   # Actions画面から手動公開もできるようにする
