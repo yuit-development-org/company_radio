@@ -1,0 +1,49 @@
+name: Deploy Radio Site
+
+on:
+  # 毎週金曜日 18:00（日本時間）に自動実行
+  schedule:
+    - cron: "0 18 * * 5"
+      timezone: "Asia/Tokyo"
+
+  # Actions画面から手動公開もできるようにする
+  workflow_dispatch:
+
+# GitHub Pagesへの公開に必要な権限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同時に複数の公開処理が走らないようにする
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # リポジトリの中身を取得
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      # GitHub Pagesの設定
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # company_radio直下のHTML/CSS/JSなどを公開用にまとめる
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: "."
+
+      # GitHub Pagesへ公開
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
