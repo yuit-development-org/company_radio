@@ -657,7 +657,145 @@ html {
     margin-top: 16px;
 }
 
+/* 月別アーカイブボタン */
+.archive-month-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
 
+.archive-month-button:hover {
+    opacity: 0.65;
+}
+
+.archive-month-button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+/* モーダル全体 */
+.archive-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.archive-modal[hidden] {
+    display: none;
+}
+
+/* 背景 */
+.archive-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* モーダル本体 */
+.archive-modal-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 520px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ヘッダー */
+.archive-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.archive-modal-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 22px;
+}
+
+.archive-modal-close {
+    border: none;
+    background: transparent;
+    color: #555;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* エピソード一覧 */
+.archive-modal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.archive-modal-episode {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 18px;
+    background: #f7f7f7;
+    border-radius: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.archive-modal-episode:hover {
+    background: #ededed;
+    transform: translateY(-2px);
+}
+
+.archive-modal-date {
+    font-size: 15px;
+    color: #070707;
+}
+
+.archive-modal-episode-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.archive-modal-guest {
+    font-size: 17px;
+    color: #525252;
+}
+
+/* スマートフォン */
+@media (max-width: 600px) {
+    .archive-modal-content {
+        padding: 22px;
+    }
+
+    .archive-modal-header h2 {
+        font-size: 19px;
+    }
+
+    .archive-modal-episode-title {
+        font-size: 14px;
+    }
+}
 
 /* 改行 */
 .pc-break {
