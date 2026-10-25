@@ -797,6 +797,50 @@ html {
     }
 }
 
+
+/* 年別アーカイブ見出し */
+.backnumber-year-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+/* 月別アーカイブ一覧 */
+.backnumber-month-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-left: 24px;
+}
+
+/* 月別ボタンの調整 */
+.backnumber-month-list .archive-month-button {
+    width: auto;
+    padding: 8px 0;
+    font-size: 20px;
+    font-weight: 600;
+    gap: 10px;
+}
+
+/* 月別ボタンの矢印 */
+.backnumber-month-list .archive-month-button::before {
+    content: "›";
+    font-size: 24px;
+    line-height: 1;
+}
+
+/* スマートフォン */
+@media (max-width: 600px) {
+    .backnumber-year-title {
+        font-size: 24px;
+    }
+
+    .backnumber-month-list .archive-month-button {
+        font-size: 18px;
+    }
+}
+
 /* 改行 */
 .pc-break {
     display: inline;
@@ -1581,4 +1625,8 @@ html {
     .backnumber-back .back-link {
         font-size: 13px;
     }
+}
+
+html {
+    scrollbar-gutter: stable;
 }

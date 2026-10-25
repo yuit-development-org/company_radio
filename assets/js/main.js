@@ -22,47 +22,74 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
 /* 月別アーカイブモーダル */
 document.addEventListener("DOMContentLoaded", () => {
-    const openButton = document.querySelector("[data-archive-open]");
-    const modal = document.getElementById("archive-modal-september");
-
-    if (!openButton || !modal) return;
-
-    const closeButton = modal.querySelector(".archive-modal-close");
+    const openButtons = document.querySelectorAll("[data-archive-open]");
     let previousFocus = null;
+    let activeModal = null;
 
-    const openModal = () => {
+    // モーダルを開く
+    const openModal = (modal) => {
+        if (!modal) return;
+
         previousFocus = document.activeElement;
+        activeModal = modal;
+
         modal.hidden = false;
         document.body.style.overflow = "hidden";
-        closeButton.focus();
+
+        const closeButton = modal.querySelector(".archive-modal-close");
+        closeButton?.focus();
     };
 
+    // モーダルを閉じる
     const closeModal = () => {
-        modal.hidden = true;
+        if (!activeModal) return;
+
+        activeModal.hidden = true;
         document.body.style.overflow = "";
+
+        activeModal = null;
         previousFocus?.focus();
     };
 
-    openButton.addEventListener("click", openModal);
+    // 月別ボタン
+    openButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const modalId = button.getAttribute("aria-controls");
+            const modal = document.getElementById(modalId);
 
-    modal.querySelectorAll("[data-archive-close]").forEach((element) => {
+            openModal(modal);
+        });
+    });
+
+    // 閉じるボタン・背景クリック
+    document.querySelectorAll("[data-archive-close]").forEach((element) => {
         element.addEventListener("click", closeModal);
     });
 
+    // キーボード操作
     document.addEventListener("keydown", (event) => {
-        if (modal.hidden) return;
+        if (!activeModal) return;
 
         if (event.key === "Escape") {
             closeModal();
+            return;
         }
 
-        // Tabキーでフォーカスがモーダル外へ出ないようにする
+        // Tabキーでフォーカスが外に出ないようにする
         if (event.key === "Tab") {
             const focusable = Array.from(
-                modal.querySelectorAll("button, a[href]")
+                activeModal.querySelectorAll(
+                    'button:not([disabled]), a[href]'
+                )
             );
+
+            if (focusable.length === 0) {
+                event.preventDefault();
+                return;
+            }
 
             const first = focusable[0];
             const last = focusable[focusable.length - 1];
