@@ -6,9 +6,9 @@ name: Deploy Radio Site
 #     - cron: "30 8 * * 5"
 
 on:
-  # テスト用：日曜日 15:47（日本時間）
+  # テスト用：15分ごとに実行
   schedule:
-    - cron: "47 6 * * 0"
+    - cron: "7,22,37,52 * * * *"
 
   # Actions画面から手動公開もできるようにする
   workflow_dispatch:
