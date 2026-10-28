@@ -1,16 +1,7 @@
 name: Deploy Radio Site
 
-# on:
-#   # 毎週金曜日 17:30（日本時間）
-#   schedule:
-#     - cron: "30 8 * * 5"
-
 on:
-  # テスト用：15分ごとに実行
-  schedule:
-    - cron: "7,22,37,52 * * * *"
-
-  # Actions画面から手動公開もできるようにする
+  # 手動実行で公開
   workflow_dispatch:
 
 # GitHub Pagesへの公開に必要な権限
