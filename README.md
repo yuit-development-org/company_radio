@@ -9,22 +9,25 @@
 - お便り募集
 
 ## ディレクトリ構成
-
-/<br>
-├── index.html<br>
-├── about.html<br>
-├── episodes.html<br>
-├── operations.html<br>
-├── contact.html<br>
+/
+├── assets/<br>
+│  ├── css/
+│  │ └── style.css<br>
+│  ├── images/
+│  │ ├── epi01_thumb.png<br>
+│  │ ├── ･･･
+│  │ └── ･･･
+│  │<br>　
+│  └── js/<br>
+│    └── main.js
 │<br>
 ├── profile/<br>
-│ ├── machami.html<br>
-│ └── yanochi.html<br>
+│ ├── 01.machami.html<br>
+│ └── 02.yanochi.html<br>
 │<br>
-└── assets/<br>
-    ├── css/<br>
-    ├── js/<br>
-    └── images/<br>
+├── backnumber.html<br>
+├── index.html<br>
+│<br>
 
 ## GitHub Pages
 
@@ -44,7 +47,7 @@ main<br>
 
 /assets/images/
 
-② episodes.htmlへ追加
+② backnumber.htmlへ追加
 
 ③ YouTubeリンクを設定
 
